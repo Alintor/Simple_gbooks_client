@@ -13,6 +13,8 @@
 		A8674C991FC402B800088546 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8674C971FC402B800088546 /* Main.storyboard */; };
 		A8674C9B1FC402B800088546 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8674C9A1FC402B800088546 /* Assets.xcassets */; };
 		A8674C9E1FC402B800088546 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8674C9C1FC402B800088546 /* LaunchScreen.storyboard */; };
+		A86E90561FC484A1007B3AC0 /* NetworkingConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86E90551FC484A1007B3AC0 /* NetworkingConstants.swift */; };
+		A86E90581FC48718007B3AC0 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86E90571FC48718007B3AC0 /* Requests.swift */; };
 		A889A4701FC4258100BC1D97 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = A889A46F1FC4258100BC1D97 /* Authorization.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +28,9 @@
 		A8674C9A1FC402B800088546 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A8674C9D1FC402B800088546 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A8674C9F1FC402B800088546 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A889A46F1FC4258100BC1D97 /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Authorization.swift; path = NetworkLayer/Authorization.swift; sourceTree = "<group>"; };
+		A86E90551FC484A1007B3AC0 /* NetworkingConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingConstants.swift; sourceTree = "<group>"; };
+		A86E90571FC48718007B3AC0 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
+		A889A46F1FC4258100BC1D97 /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
 		FF33B2C9D2D15250EF2A18EE /* Pods-Gbooks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gbooks.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gbooks/Pods-Gbooks.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,13 +86,23 @@
 			children = (
 				A8674C931FC402B800088546 /* AppDelegate.swift */,
 				A8674C951FC402B800088546 /* ViewController.swift */,
-				A889A46F1FC4258100BC1D97 /* Authorization.swift */,
+				A86E90591FC48F1E007B3AC0 /* NetworkingLayer */,
 				A8674C971FC402B800088546 /* Main.storyboard */,
 				A8674C9A1FC402B800088546 /* Assets.xcassets */,
 				A8674C9C1FC402B800088546 /* LaunchScreen.storyboard */,
 				A8674C9F1FC402B800088546 /* Info.plist */,
 			);
 			path = Gbooks;
+			sourceTree = "<group>";
+		};
+		A86E90591FC48F1E007B3AC0 /* NetworkingLayer */ = {
+			isa = PBXGroup;
+			children = (
+				A889A46F1FC4258100BC1D97 /* Authorization.swift */,
+				A86E90551FC484A1007B3AC0 /* NetworkingConstants.swift */,
+				A86E90571FC48718007B3AC0 /* Requests.swift */,
+			);
+			path = NetworkingLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,7 +239,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A889A4701FC4258100BC1D97 /* Authorization.swift in Sources */,
+				A86E90561FC484A1007B3AC0 /* NetworkingConstants.swift in Sources */,
 				A8674C961FC402B800088546 /* ViewController.swift in Sources */,
+				A86E90581FC48718007B3AC0 /* Requests.swift in Sources */,
 				A8674C941FC402B800088546 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

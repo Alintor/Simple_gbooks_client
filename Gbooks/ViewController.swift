@@ -20,6 +20,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func qwe(_ sender: Any) {
+        
+        Authorization.shared.authorizedAccess(sender: self) {
+            print("Test")
+        }
 
+    }
+    
 }
 

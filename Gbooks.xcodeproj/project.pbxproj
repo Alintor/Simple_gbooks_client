@@ -13,6 +13,7 @@
 		A8674C991FC402B800088546 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8674C971FC402B800088546 /* Main.storyboard */; };
 		A8674C9B1FC402B800088546 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8674C9A1FC402B800088546 /* Assets.xcassets */; };
 		A8674C9E1FC402B800088546 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8674C9C1FC402B800088546 /* LaunchScreen.storyboard */; };
+		A889A4701FC4258100BC1D97 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = A889A46F1FC4258100BC1D97 /* Authorization.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		A8674C9A1FC402B800088546 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A8674C9D1FC402B800088546 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A8674C9F1FC402B800088546 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A889A46F1FC4258100BC1D97 /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Authorization.swift; path = NetworkLayer/Authorization.swift; sourceTree = "<group>"; };
 		FF33B2C9D2D15250EF2A18EE /* Pods-Gbooks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gbooks.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gbooks/Pods-Gbooks.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +82,7 @@
 			children = (
 				A8674C931FC402B800088546 /* AppDelegate.swift */,
 				A8674C951FC402B800088546 /* ViewController.swift */,
+				A889A46F1FC4258100BC1D97 /* Authorization.swift */,
 				A8674C971FC402B800088546 /* Main.storyboard */,
 				A8674C9A1FC402B800088546 /* Assets.xcassets */,
 				A8674C9C1FC402B800088546 /* LaunchScreen.storyboard */,
@@ -221,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A889A4701FC4258100BC1D97 /* Authorization.swift in Sources */,
 				A8674C961FC402B800088546 /* ViewController.swift in Sources */,
 				A8674C941FC402B800088546 /* AppDelegate.swift in Sources */,
 			);

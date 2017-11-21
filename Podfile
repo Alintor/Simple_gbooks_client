@@ -7,6 +7,6 @@ target 'Gbooks' do
   # Pods for Gbooks
   pod 'Alamofire'
   pod 'SwiftyJSON'
-  pod 'OAuthSwift'
+  pod 'OAuthSwift', '~> 1.2.0'
 
 end

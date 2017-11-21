@@ -7,5 +7,6 @@ target 'Gbooks' do
   # Pods for Gbooks
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'OAuthSwift'
 
 end

@@ -48,7 +48,7 @@
                     <navigationItem key="navigationItem" id="AvL-Xl-okv"/>
                     <connections>
                         <outlet property="searchBar" destination="LHh-HE-abI" id="b83-ow-G7i"/>
-                        <outlet property="tableVew" destination="YsM-9H-D9b" id="t5V-sU-eas"/>
+                        <outlet property="tableVew" destination="YsM-9H-D9b" id="vgT-vD-hED"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xr3-KV-Aap" userLabel="First Responder" sceneMemberID="firstResponder"/>

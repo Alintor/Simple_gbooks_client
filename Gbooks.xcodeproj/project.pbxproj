@@ -17,6 +17,8 @@
 		A86E905B1FC49569007B3AC0 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86E905A1FC49569007B3AC0 /* NetworkService.swift */; };
 		A86E905D1FC53395007B3AC0 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86E905C1FC53395007B3AC0 /* Book.swift */; };
 		A86E905F1FC54F83007B3AC0 /* SearchBooksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86E905E1FC54F83007B3AC0 /* SearchBooksVC.swift */; };
+		A86E90621FC5559A007B3AC0 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86E90601FC5559A007B3AC0 /* BookCell.swift */; };
+		A86E90631FC5559A007B3AC0 /* BookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A86E90611FC5559A007B3AC0 /* BookCell.xib */; };
 		A889A4701FC4258100BC1D97 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = A889A46F1FC4258100BC1D97 /* Authorization.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,7 +35,9 @@
 		A86E90571FC48718007B3AC0 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
 		A86E905A1FC49569007B3AC0 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		A86E905C1FC53395007B3AC0 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
-		A86E905E1FC54F83007B3AC0 /* SearchBooksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchBooksVC.swift; path = ViewControllers/SearchBooksVC.swift; sourceTree = "<group>"; };
+		A86E905E1FC54F83007B3AC0 /* SearchBooksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBooksVC.swift; sourceTree = "<group>"; };
+		A86E90601FC5559A007B3AC0 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
+		A86E90611FC5559A007B3AC0 /* BookCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCell.xib; sourceTree = "<group>"; };
 		A889A46F1FC4258100BC1D97 /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
 		FF33B2C9D2D15250EF2A18EE /* Pods-Gbooks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gbooks.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gbooks/Pods-Gbooks.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,7 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				A8674C931FC402B800088546 /* AppDelegate.swift */,
-				A86E905E1FC54F83007B3AC0 /* SearchBooksVC.swift */,
+				A86E90691FC55A14007B3AC0 /* View */,
+				A86E90671FC559DA007B3AC0 /* VC */,
 				A86E90591FC48F1E007B3AC0 /* NetworkingLayer */,
 				A8674C971FC402B800088546 /* Main.storyboard */,
 				A8674C9A1FC402B800088546 /* Assets.xcassets */,
@@ -109,6 +114,23 @@
 				A86E905C1FC53395007B3AC0 /* Book.swift */,
 			);
 			path = NetworkingLayer;
+			sourceTree = "<group>";
+		};
+		A86E90671FC559DA007B3AC0 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				A86E905E1FC54F83007B3AC0 /* SearchBooksVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		A86E90691FC55A14007B3AC0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A86E90601FC5559A007B3AC0 /* BookCell.swift */,
+				A86E90611FC5559A007B3AC0 /* BookCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A86E90631FC5559A007B3AC0 /* BookCell.xib in Resources */,
 				A8674C9E1FC402B800088546 /* LaunchScreen.storyboard in Resources */,
 				A8674C9B1FC402B800088546 /* Assets.xcassets in Resources */,
 				A8674C991FC402B800088546 /* Main.storyboard in Resources */,
@@ -248,6 +271,7 @@
 				A86E90561FC484A1007B3AC0 /* NetworkingConstants.swift in Sources */,
 				A86E905D1FC53395007B3AC0 /* Book.swift in Sources */,
 				A86E905F1FC54F83007B3AC0 /* SearchBooksVC.swift in Sources */,
+				A86E90621FC5559A007B3AC0 /* BookCell.swift in Sources */,
 				A86E90581FC48718007B3AC0 /* Requests.swift in Sources */,
 				A86E905B1FC49569007B3AC0 /* NetworkService.swift in Sources */,
 				A8674C941FC402B800088546 /* AppDelegate.swift in Sources */,

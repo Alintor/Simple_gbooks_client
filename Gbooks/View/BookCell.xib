@@ -13,7 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="137" id="KGk-i7-Jjw" customClass="BookCell" customModule="Gbooks" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="137" id="KGk-i7-Jjw" customClass="BookCell" customModule="Gbooks" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="362" height="147"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -28,11 +28,16 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="dn1-GG-3D2" secondAttribute="height" multiplier="9:11" id="81y-aX-sMR"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <real key="value" value="0.10000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubw-1C-JeG">
                                 <rect key="frame" x="102" y="8" width="187" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.41331823342188734" green="0.42316468751917874" blue="0.44100248541323661" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCz-OY-7nT">
@@ -41,29 +46,35 @@
                                     <constraint firstAttribute="height" constant="22" id="UD5-rH-xt4"/>
                                     <constraint firstAttribute="width" constant="25" id="eRC-yX-zw3"/>
                                 </constraints>
-                                <state key="normal" image="icn_favorite_unsel"/>
+                                <state key="normal" image="icn_favorite_unsel">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="favoriteAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Asg-uH-jwP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2BV-Ui-Bdk">
-                                <rect key="frame" x="272" y="83.5" width="50" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2BV-Ui-Bdk">
+                                <rect key="frame" x="230" y="92" width="92" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="Qoc-SP-3vg"/>
+                                    <constraint firstAttribute="width" constant="92" id="Qoc-SP-3vg"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="tintColor" red="0.40292343260000002" green="0.41416855330000002" blue="0.43633399579999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Preview" image="icn_preview">
+                                    <color key="titleColor" red="0.40292343260000002" green="0.41416855330000002" blue="0.43633399579999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="previewAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="1ER-R6-v1k"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIW-Y1-ohi">
-                                <rect key="frame" x="102" y="30" width="162" height="14.5"/>
+                                <rect key="frame" x="102" y="30" width="120" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.63921568627450975" green="0.65490196078431373" blue="0.69019607843137254" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96470588235294119" green="0.96862745098039216" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="CCz-OY-7nT" firstAttribute="leading" secondItem="ubw-1C-JeG" secondAttribute="trailing" constant="8" id="1a0-XK-BLR"/>
                             <constraint firstAttribute="bottom" secondItem="2BV-Ui-Bdk" secondAttribute="bottom" constant="8" id="8U8-vr-ZUV"/>
@@ -79,8 +90,23 @@
                             <constraint firstItem="CCz-OY-7nT" firstAttribute="top" secondItem="xUb-4N-qFt" secondAttribute="top" constant="8" id="wBR-0z-ZlN"/>
                             <constraint firstItem="ubw-1C-JeG" firstAttribute="leading" secondItem="dn1-GG-3D2" secondAttribute="trailing" constant="8" id="zvr-e5-add"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                <real key="value" value="0.10000000000000001"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                <size key="value" width="1" height="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
+                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="xUb-4N-qFt" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="KA0-ch-osj"/>
                     <constraint firstItem="xUb-4N-qFt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="kpg-zy-iY5"/>
@@ -88,6 +114,7 @@
                     <constraint firstAttribute="bottomMargin" secondItem="xUb-4N-qFt" secondAttribute="bottom" constant="2" id="yjG-AH-0t0"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="authorsLbl" destination="kIW-Y1-ohi" id="MAq-NO-unJ"/>
@@ -100,5 +127,6 @@
     </objects>
     <resources>
         <image name="icn_favorite_unsel" width="21" height="21"/>
+        <image name="icn_preview" width="21" height="21"/>
     </resources>
 </document>

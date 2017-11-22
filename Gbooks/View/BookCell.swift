@@ -21,6 +21,10 @@ class BookCell: UITableViewCell, Reusable {
     var delegate:BookCellDelegate!
     var isFavorite = false
     
+    override func awakeFromNib() {
+        favoriteBtn.tintColor = UIColor(red: 126.0/255.0, green: 54.0/255.0, blue: 26.0/255.0, alpha: 1)
+    }
+    
     func refreshFavoriteButtonIcon() {
         if isFavorite {
             favoriteBtn.setImage(UIImage(named: "icn_favorite_sel"), for: .normal)
@@ -52,7 +56,6 @@ class BookCell: UITableViewCell, Reusable {
         bookId = book.id
         previewURL = book.previewLink
         self.delegate = delegate
-        
         delegate.isFavoriteBook(bookId: book.id) { (isFavorite) in
             self.isFavorite = isFavorite
             self.refreshFavoriteButtonIcon()

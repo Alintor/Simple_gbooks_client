@@ -1,11 +1,10 @@
 
 
 import UIKit
-import WebKit
 
 class WebVC: UIViewController {
 
-    @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var webView: UIWebView!
     
     
     var link:URL!
@@ -15,7 +14,7 @@ class WebVC: UIViewController {
         super.viewDidLoad()
         
         let request = URLRequest(url: link)
-        webView.load(request)
+        webView.loadRequest(request)
     }
     
     @IBAction func closeBtnAction(_ sender: Any) {

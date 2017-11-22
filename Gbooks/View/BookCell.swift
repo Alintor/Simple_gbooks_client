@@ -3,8 +3,10 @@ import UIKit
 import Kingfisher
 
 protocol BookCellDelegate {
-    func manageFavorite(bookId: String)
+    func addToFavorite(bookId: String)
+    func removeFromFavorite(bookId: String)
     func showBookPreview(previewURL: URL)
+    func isFavoriteBook(bookId:String, callback:@escaping (Bool)->())
 }
 
 class BookCell: UITableViewCell, Reusable {
@@ -17,11 +19,25 @@ class BookCell: UITableViewCell, Reusable {
     var bookId:String!
     var previewURL: URL!
     var delegate:BookCellDelegate!
+    var isFavorite = false
     
+    func refreshFavoriteButtonIcon() {
+        if isFavorite {
+            favoriteBtn.setImage(UIImage(named: "icn_favorite_sel"), for: .normal)
+        } else {
+            favoriteBtn.setImage(UIImage(named: "icn_favorite_unsel"), for: .normal)
+        }
+    }
     
     
     @IBAction func favoriteAction(_ sender: Any) {
-        delegate.manageFavorite(bookId: bookId)
+        if isFavorite {
+            delegate.removeFromFavorite(bookId: bookId)
+        } else {
+            delegate.addToFavorite(bookId: bookId)
+        }
+        isFavorite = !isFavorite
+        refreshFavoriteButtonIcon()
     }
     
     @IBAction func previewAction(_ sender: Any) {
@@ -30,12 +46,17 @@ class BookCell: UITableViewCell, Reusable {
     
     func configureCell(book: Book, delegate:BookCellDelegate) {
         titleLbl.text = book.title
-        authorsLbl.text = book.authors.first
+        authorsLbl.text = book.authors.joined(separator: "\n")
         bookImage.kf.indicatorType = .activity
         bookImage.kf.setImage(with: book.imageLink)
         bookId = book.id
         previewURL = book.previewLink
         self.delegate = delegate
+        
+        delegate.isFavoriteBook(bookId: book.id) { (isFavorite) in
+            self.isFavorite = isFavorite
+            self.refreshFavoriteButtonIcon()
+        }
     }
     
 }

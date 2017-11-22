@@ -30,18 +30,18 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubw-1C-JeG">
-                                <rect key="frame" x="102" y="8" width="182" height="18"/>
+                                <rect key="frame" x="102" y="8" width="187" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCz-OY-7nT">
-                                <rect key="frame" x="292" y="8" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCz-OY-7nT">
+                                <rect key="frame" x="297" y="8" width="25" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="UD5-rH-xt4"/>
-                                    <constraint firstAttribute="width" constant="30" id="eRC-yX-zw3"/>
+                                    <constraint firstAttribute="height" constant="22" id="UD5-rH-xt4"/>
+                                    <constraint firstAttribute="width" constant="25" id="eRC-yX-zw3"/>
                                 </constraints>
-                                <state key="normal" title="B"/>
+                                <state key="normal" image="icn_favorite_unsel"/>
                                 <connections>
                                     <action selector="favoriteAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Asg-uH-jwP"/>
                                 </connections>
@@ -56,8 +56,8 @@
                                     <action selector="previewAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="1ER-R6-v1k"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIW-Y1-ohi">
-                                <rect key="frame" x="102" y="34" width="162" height="14.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIW-Y1-ohi">
+                                <rect key="frame" x="102" y="30" width="162" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -75,7 +75,7 @@
                             <constraint firstAttribute="trailing" secondItem="CCz-OY-7nT" secondAttribute="trailing" constant="8" id="WXG-Y1-YBS"/>
                             <constraint firstAttribute="trailing" secondItem="2BV-Ui-Bdk" secondAttribute="trailing" constant="8" id="amA-x9-QlU"/>
                             <constraint firstItem="ubw-1C-JeG" firstAttribute="top" secondItem="xUb-4N-qFt" secondAttribute="top" constant="8" id="jNT-Pu-hHo"/>
-                            <constraint firstItem="kIW-Y1-ohi" firstAttribute="top" secondItem="ubw-1C-JeG" secondAttribute="bottom" constant="8" id="sbj-WO-xKA"/>
+                            <constraint firstItem="kIW-Y1-ohi" firstAttribute="top" secondItem="ubw-1C-JeG" secondAttribute="bottom" constant="4" id="sbj-WO-xKA"/>
                             <constraint firstItem="CCz-OY-7nT" firstAttribute="top" secondItem="xUb-4N-qFt" secondAttribute="top" constant="8" id="wBR-0z-ZlN"/>
                             <constraint firstItem="ubw-1C-JeG" firstAttribute="leading" secondItem="dn1-GG-3D2" secondAttribute="trailing" constant="8" id="zvr-e5-add"/>
                         </constraints>
@@ -98,4 +98,7 @@
             <point key="canvasLocation" x="19" y="40.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="icn_favorite_unsel" width="21" height="21"/>
+    </resources>
 </document>

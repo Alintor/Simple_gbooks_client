@@ -60,8 +60,26 @@ extension BooksVC : UITableViewDelegate {
 }
 
 extension BooksVC : BookCellDelegate {
-    func manageFavorite(bookId: String) {
-        
+    func isFavoriteBook(bookId: String, callback: @escaping (Bool) -> ()) {
+        NetworkService.isBookFavorite(bookId: bookId) { (isFavorite) in
+            callback(isFavorite)
+        }
+    }
+    
+    func addToFavorite(bookId: String) {
+        NetworkService.manageFavoriteBook(request: Requests.addBookToFavorite(bookId: bookId)) { (result) in
+            if case let .failure(error) = result {
+                print(error)
+            }
+        }
+    }
+    
+    func removeFromFavorite(bookId: String) {
+        NetworkService.manageFavoriteBook(request: Requests.removeBookFromFavorite(bookId: bookId)) { (result) in
+            if case let .failure(error) = result {
+                print(error)
+            }
+        }
     }
     
     func showBookPreview(previewURL: URL) {

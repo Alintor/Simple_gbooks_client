@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		845E4327E8B552EC1D339A8A /* Pods_Gbooks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3419D53CB6670DF2EF7C86ED /* Pods_Gbooks.framework */; };
 		A8674C941FC402B800088546 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8674C931FC402B800088546 /* AppDelegate.swift */; };
-		A8674C961FC402B800088546 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8674C951FC402B800088546 /* ViewController.swift */; };
 		A8674C991FC402B800088546 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8674C971FC402B800088546 /* Main.storyboard */; };
 		A8674C9B1FC402B800088546 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8674C9A1FC402B800088546 /* Assets.xcassets */; };
 		A8674C9E1FC402B800088546 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8674C9C1FC402B800088546 /* LaunchScreen.storyboard */; };
@@ -17,6 +16,7 @@
 		A86E90581FC48718007B3AC0 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86E90571FC48718007B3AC0 /* Requests.swift */; };
 		A86E905B1FC49569007B3AC0 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86E905A1FC49569007B3AC0 /* NetworkService.swift */; };
 		A86E905D1FC53395007B3AC0 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86E905C1FC53395007B3AC0 /* Book.swift */; };
+		A86E905F1FC54F83007B3AC0 /* SearchBooksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86E905E1FC54F83007B3AC0 /* SearchBooksVC.swift */; };
 		A889A4701FC4258100BC1D97 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = A889A46F1FC4258100BC1D97 /* Authorization.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,7 +25,6 @@
 		3419D53CB6670DF2EF7C86ED /* Pods_Gbooks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gbooks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8674C901FC402B800088546 /* Gbooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gbooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8674C931FC402B800088546 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A8674C951FC402B800088546 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A8674C981FC402B800088546 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A8674C9A1FC402B800088546 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A8674C9D1FC402B800088546 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -34,6 +33,7 @@
 		A86E90571FC48718007B3AC0 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
 		A86E905A1FC49569007B3AC0 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		A86E905C1FC53395007B3AC0 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		A86E905E1FC54F83007B3AC0 /* SearchBooksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchBooksVC.swift; path = ViewControllers/SearchBooksVC.swift; sourceTree = "<group>"; };
 		A889A46F1FC4258100BC1D97 /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
 		FF33B2C9D2D15250EF2A18EE /* Pods-Gbooks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gbooks.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gbooks/Pods-Gbooks.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,7 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				A8674C931FC402B800088546 /* AppDelegate.swift */,
-				A8674C951FC402B800088546 /* ViewController.swift */,
+				A86E905E1FC54F83007B3AC0 /* SearchBooksVC.swift */,
 				A86E90591FC48F1E007B3AC0 /* NetworkingLayer */,
 				A8674C971FC402B800088546 /* Main.storyboard */,
 				A8674C9A1FC402B800088546 /* Assets.xcassets */,
@@ -247,7 +247,7 @@
 				A889A4701FC4258100BC1D97 /* Authorization.swift in Sources */,
 				A86E90561FC484A1007B3AC0 /* NetworkingConstants.swift in Sources */,
 				A86E905D1FC53395007B3AC0 /* Book.swift in Sources */,
-				A8674C961FC402B800088546 /* ViewController.swift in Sources */,
+				A86E905F1FC54F83007B3AC0 /* SearchBooksVC.swift in Sources */,
 				A86E90581FC48718007B3AC0 /* Requests.swift in Sources */,
 				A86E905B1FC49569007B3AC0 /* NetworkService.swift in Sources */,
 				A8674C941FC402B800088546 /* AppDelegate.swift in Sources */,

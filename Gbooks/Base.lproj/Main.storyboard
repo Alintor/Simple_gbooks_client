@@ -45,15 +45,56 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="C92-Dk-Cte"/>
                     </view>
-                    <navigationItem key="navigationItem" id="AvL-Xl-okv"/>
+                    <navigationItem key="navigationItem" id="AvL-Xl-okv">
+                        <barButtonItem key="rightBarButtonItem" title="Favorites" id="gRK-vx-9z6">
+                            <connections>
+                                <action selector="favoritesBtnAction:" destination="odq-bQ-zyp" id="JYx-DM-idl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="LHh-HE-abI" id="b83-ow-G7i"/>
                         <outlet property="tableVew" destination="YsM-9H-D9b" id="vgT-vD-hED"/>
+                        <segue destination="B9J-Qi-ceT" kind="show" identifier="FavoriteBooksVC" id="VEg-Sg-J6H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xr3-KV-Aap" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="676" y="34.632683658170919"/>
+        </scene>
+        <!--Favorite BooksVC-->
+        <scene sceneID="hpn-Hw-Iah">
+            <objects>
+                <viewController id="B9J-Qi-ceT" customClass="FavoriteBooksVC" customModule="Gbooks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s5X-TC-gh6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="135" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="boL-Mi-kuv">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="B9J-Qi-ceT" id="brC-bc-okc"/>
+                                    <outlet property="delegate" destination="B9J-Qi-ceT" id="NMa-Fs-3vM"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="boL-Mi-kuv" firstAttribute="top" secondItem="MAi-dh-6kk" secondAttribute="top" id="3fl-3e-jF0"/>
+                            <constraint firstItem="boL-Mi-kuv" firstAttribute="trailing" secondItem="MAi-dh-6kk" secondAttribute="trailing" id="IFB-ap-mL1"/>
+                            <constraint firstItem="boL-Mi-kuv" firstAttribute="leading" secondItem="MAi-dh-6kk" secondAttribute="leading" id="aD7-5g-q1Z"/>
+                            <constraint firstItem="boL-Mi-kuv" firstAttribute="bottom" secondItem="MAi-dh-6kk" secondAttribute="bottom" id="dCE-Xh-sdw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MAi-dh-6kk"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableVew" destination="boL-Mi-kuv" id="nTb-4l-Pb0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LbZ-DX-bjw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1525.5999999999999" y="34.632683658170919"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YJ2-Gq-fIr">

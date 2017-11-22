@@ -3,7 +3,7 @@ struct NetworkingConstants {
     static let baseUrl = "https://www.googleapis.com/books/v1"
     static let volumes = "/volumes"
     static let favorites = "/mylibrary/bookshelves/0"
-    static let addValume = "/addValume"
+    static let addValume = "/addVolume"
     static let removeValume = "/removeVolume"
     
     static let volumeId = "volumeId"

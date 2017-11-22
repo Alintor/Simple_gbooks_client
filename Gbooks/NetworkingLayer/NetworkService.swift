@@ -29,19 +29,27 @@ struct NetworkService {
     }
     
     static func manageFavoriteBook(request: URLRequestConvertible, completion: @escaping (Result<String>) -> Void){
-        Alamofire.request(request).responseJSON(completionHandler: { response in
-            
-            switch(response.result){
-                
-            case .success:
-                
-                completion(Result.success("Success"))
-                
-            case let .failure(error):
+//        Alamofire.request(request).responseJSON(completionHandler: { response in
+//            
+//            switch(response.result){
+//                
+//            case .success:
+//                
+//                completion(Result.success("Success"))
+//                
+//            case let .failure(error):
+//                completion(Result.failure(error.localizedDescription))
+//                
+//            }
+//        })
+        
+        Alamofire.request(request).response { (response) in
+            if let error = response.error {
                 completion(Result.failure(error.localizedDescription))
-                
+            } else {
+                completion(Result.success("Success"))
             }
-        })
+        }
     }
     
     private static func parseBooks(json: JSON) -> [Book]{

@@ -14,13 +14,37 @@ class Authorization: NSObject {
     static let scope = "https://www.googleapis.com/auth/books"
     static let state = "books"
     static let oauthToken = "oauthToken"
+    static let oauthRefreshToken = "oauthRefreshToken"
+    static let tokenExpiresDate = "tokenExpiresDate"
     
     let oauthswift: OAuth2Swift
     
-    var token: String? {
-        didSet {
-            UserDefaults.standard.set(token, forKey: Authorization.oauthToken)
+    private(set) var token: String? {
+        set {
+            UserDefaults.standard.set(newValue, forKey: Authorization.oauthToken)
         }
+        get {
+            return UserDefaults.standard.string(forKey: Authorization.oauthToken)
+        }
+    }
+    
+    private var refreshToken:String {
+        set {
+            UserDefaults.standard.set(newValue, forKey: Authorization.oauthRefreshToken)
+        }
+        get {
+            return UserDefaults.standard.string(forKey: Authorization.oauthRefreshToken)!
+        }
+    }
+    
+    private var tokenExpiresDate: Date {
+        set {
+            UserDefaults.standard.set(newValue, forKey: Authorization.tokenExpiresDate)
+        }
+        get {
+            return UserDefaults.standard.object(forKey: Authorization.tokenExpiresDate) as! Date
+        }
+        
     }
     
     override init() {
@@ -30,7 +54,6 @@ class Authorization: NSObject {
                                  accessTokenUrl: Authorization.accessTokenUrl,
                                  responseType: Authorization.responseType)
         
-        token = UserDefaults.standard.string(forKey: Authorization.oauthToken)
         
     }
     
@@ -42,22 +65,47 @@ class Authorization: NSObject {
         }
     }
     
+    func checkTokenValidation(callback: @escaping (Bool)->()) {
+        guard isTokenValid() else {
+            callback(false)
+            return
+        }
+        guard Date() > tokenExpiresDate else {
+            callback(true)
+            return
+        }
+        
+        oauthswift.renewAccessToken(withRefreshToken: refreshToken, success: { (credentical, response, params) in
+            self.token = credentical.oauthToken
+            self.refreshToken = credentical.oauthRefreshToken
+            self.tokenExpiresDate = credentical.oauthTokenExpiresAt!
+            callback(true)
+        }) { (error) in
+            print(error.localizedDescription)
+            callback(false)
+        }
+    }
+    
     func authorizedAccess(sender viewController:UIViewController, action: @escaping ()->()) {
-        if isTokenValid() {
-            action()
-        } else {
-            oauthswift.authorizeURLHandler = SafariURLHandler(viewController: viewController, oauthSwift: oauthswift)
-            oauthswift.authorize(withCallbackURL: Authorization.callbackURL,
-                                 scope: Authorization.scope,
-                                 state: Authorization.state,
-                                 success: { (credentical, response, params) in
-                                    self.token = credentical.oauthToken
-                                    DispatchQueue.main.async {
-                                        action()
-                                    }
-                                    
-            }) { (error) in
-                print(error.localizedDescription)
+        checkTokenValidation { (isValid) in
+            if isValid {
+                action()
+            } else {
+                self.oauthswift.authorizeURLHandler = SafariURLHandler(viewController: viewController, oauthSwift: self.oauthswift)
+                self.oauthswift.authorize(withCallbackURL: Authorization.callbackURL,
+                                     scope: Authorization.scope,
+                                     state: Authorization.state,
+                                     success: { (credentical, response, params) in
+                                        self.token = credentical.oauthToken
+                                        self.refreshToken = credentical.oauthRefreshToken
+                                        self.tokenExpiresDate = credentical.oauthTokenExpiresAt!
+                                        DispatchQueue.main.async {
+                                            action()
+                                        }
+                                        
+                }) { (error) in
+                    print(error.localizedDescription)
+                }
             }
         }
     }

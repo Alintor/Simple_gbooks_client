@@ -9,6 +9,29 @@ import SwiftyJSON
 
 struct NetworkService {
     
+    
+    static func isBookFavorite(bookId:String, completion: @escaping (Bool)->Void) {
+        Authorization.shared.checkTokenValidation { (isValid) in
+            guard isValid else {
+                completion(false)
+                return
+            }
+            
+            getBooks(request: Requests.favoriteList) { (result) in
+                switch result {
+                case let .failure(error):
+                    print(error)
+                    completion(false)
+                case let .success(books):
+                    let contains = books.contains(where: { (book) -> Bool in
+                        book.id == bookId
+                    })
+                    completion(contains)
+                }
+            }
+        }
+    }
+    
     static func getBooks(request: Requests, completion: @escaping (Result<[Book]>) -> Void){
         
         Alamofire.request(request).responseJSON(completionHandler: { response in
@@ -29,19 +52,6 @@ struct NetworkService {
     }
     
     static func manageFavoriteBook(request: URLRequestConvertible, completion: @escaping (Result<String>) -> Void){
-//        Alamofire.request(request).responseJSON(completionHandler: { response in
-//            
-//            switch(response.result){
-//                
-//            case .success:
-//                
-//                completion(Result.success("Success"))
-//                
-//            case let .failure(error):
-//                completion(Result.failure(error.localizedDescription))
-//                
-//            }
-//        })
         
         Alamofire.request(request).response { (response) in
             if let error = response.error {

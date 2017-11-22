@@ -9,4 +9,5 @@ struct NetworkingConstants {
     static let volumeId = "volumeId"
     static let searchString = "q"
     static let authorization = "Authorization"
+    static let items = "items"
 }

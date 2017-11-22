@@ -31,6 +31,13 @@ class BooksVC: UIViewController {
                 webVC.link = link
             }
         }
+        
+        if segue.identifier == String(describing: BookDetailVC.self) {
+            if let bookDetailVC = segue.destination as? BookDetailVC,
+                let book = sender as? Book {
+                bookDetailVC.book = book
+            }
+        }
      }
     
 }
@@ -57,6 +64,10 @@ extension BooksVC : UITableViewDataSource {
 }
 
 extension BooksVC : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let book = books[indexPath.row]
+        self.performSegue(withIdentifier: String(describing: BookDetailVC.self), sender: book)
+    }
 }
 
 extension BooksVC : BookCellDelegate {

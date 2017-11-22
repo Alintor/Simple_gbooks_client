@@ -56,6 +56,7 @@
                         <outlet property="searchBar" destination="LHh-HE-abI" id="b83-ow-G7i"/>
                         <outlet property="tableVew" destination="YsM-9H-D9b" id="vgT-vD-hED"/>
                         <segue destination="B9J-Qi-ceT" kind="show" identifier="FavoriteBooksVC" id="VEg-Sg-J6H"/>
+                        <segue destination="gBY-Ew-MFD" kind="presentation" identifier="WebVC" id="GOu-Fe-e9W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xr3-KV-Aap" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -90,11 +91,53 @@
                     </view>
                     <connections>
                         <outlet property="tableVew" destination="boL-Mi-kuv" id="nTb-4l-Pb0"/>
+                        <segue destination="gBY-Ew-MFD" kind="presentation" identifier="WebVC" id="m5t-0x-njF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LbZ-DX-bjw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1525.5999999999999" y="34.632683658170919"/>
+        </scene>
+        <!--WebVC-->
+        <scene sceneID="62C-fu-9cf">
+            <objects>
+                <viewController id="CVB-Pm-ViZ" customClass="WebVC" customModule="Gbooks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tRN-6g-oMh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rAn-3l-Gh1">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rAn-3l-Gh1" firstAttribute="leading" secondItem="Gux-lk-Ekl" secondAttribute="leading" id="4ad-Dk-Jvs"/>
+                            <constraint firstItem="rAn-3l-Gh1" firstAttribute="bottom" secondItem="Gux-lk-Ekl" secondAttribute="bottom" id="6hi-bi-oFX"/>
+                            <constraint firstItem="rAn-3l-Gh1" firstAttribute="trailing" secondItem="Gux-lk-Ekl" secondAttribute="trailing" id="7Nc-Wd-35S"/>
+                            <constraint firstItem="rAn-3l-Gh1" firstAttribute="top" secondItem="Gux-lk-Ekl" secondAttribute="top" id="9Ma-DA-N4m"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Gux-lk-Ekl"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bdG-mx-FfM">
+                        <barButtonItem key="rightBarButtonItem" title="Close" id="dnK-5P-YLr">
+                            <connections>
+                                <action selector="closeBtnAction:" destination="CVB-Pm-ViZ" id="UgU-PK-7Ae"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="rAn-3l-Gh1" id="iOR-yk-J5X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YvC-f2-7aA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2072.8000000000002" y="715.59220389805103"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YJ2-Gq-fIr">
@@ -114,5 +157,26 @@
             </objects>
             <point key="canvasLocation" x="-28" y="35"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NQq-Ny-b9s">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gBY-Ew-MFD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g7M-QJ-Dcs">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CVB-Pm-ViZ" kind="relationship" relationship="rootViewController" id="S0K-ik-zd3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="42Q-eM-Gkh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1329" y="752"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="m5t-0x-njF"/>
+    </inferredMetricsTieBreakers>
 </document>

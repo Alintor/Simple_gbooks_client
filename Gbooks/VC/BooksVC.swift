@@ -18,6 +18,21 @@ class BooksVC: UIViewController {
 
         tableVew.registerReusableCell(BookCell.self)
     }
+    
+    
+     // MARK: - Navigation
+     
+
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == String(describing: WebVC.self) {
+            if let navVC = segue.destination as? UINavigationController,
+                let webVC = navVC.topViewController as? WebVC,
+                let link = sender as? URL {
+                webVC.link = link
+            }
+        }
+     }
+    
 }
 
 //MARK: - UITableViewDataSource implementation
@@ -50,6 +65,6 @@ extension BooksVC : BookCellDelegate {
     }
     
     func showBookPreview(previewURL: URL) {
-        
+        self.performSegue(withIdentifier: String(describing: WebVC.self), sender: previewURL)
     }
 }

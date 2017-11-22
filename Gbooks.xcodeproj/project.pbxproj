@@ -22,6 +22,7 @@
 		A86E906B1FC562AE007B3AC0 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86E906A1FC562AE007B3AC0 /* UITableView+Extensions.swift */; };
 		A87709071FC5851E0066A0E3 /* BooksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87709061FC5851E0066A0E3 /* BooksVC.swift */; };
 		A87709091FC586180066A0E3 /* FavoriteBooksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87709081FC586180066A0E3 /* FavoriteBooksVC.swift */; };
+		A877090B1FC58C920066A0E3 /* WebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A877090A1FC58C920066A0E3 /* WebVC.swift */; };
 		A889A4701FC4258100BC1D97 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = A889A46F1FC4258100BC1D97 /* Authorization.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		A86E906A1FC562AE007B3AC0 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		A87709061FC5851E0066A0E3 /* BooksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksVC.swift; sourceTree = "<group>"; };
 		A87709081FC586180066A0E3 /* FavoriteBooksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBooksVC.swift; sourceTree = "<group>"; };
+		A877090A1FC58C920066A0E3 /* WebVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebVC.swift; sourceTree = "<group>"; };
 		A889A46F1FC4258100BC1D97 /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
 		FF33B2C9D2D15250EF2A18EE /* Pods-Gbooks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gbooks.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gbooks/Pods-Gbooks.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,6 +131,7 @@
 				A86E905E1FC54F83007B3AC0 /* SearchBooksVC.swift */,
 				A87709081FC586180066A0E3 /* FavoriteBooksVC.swift */,
 				A87709061FC5851E0066A0E3 /* BooksVC.swift */,
+				A877090A1FC58C920066A0E3 /* WebVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				A86E90621FC5559A007B3AC0 /* BookCell.swift in Sources */,
 				A86E90581FC48718007B3AC0 /* Requests.swift in Sources */,
 				A87709091FC586180066A0E3 /* FavoriteBooksVC.swift in Sources */,
+				A877090B1FC58C920066A0E3 /* WebVC.swift in Sources */,
 				A86E905B1FC49569007B3AC0 /* NetworkService.swift in Sources */,
 				A8674C941FC402B800088546 /* AppDelegate.swift in Sources */,
 			);

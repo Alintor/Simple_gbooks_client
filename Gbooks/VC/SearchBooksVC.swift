@@ -45,19 +45,21 @@ extension SearchBooksVC : UITableViewDataSource {
         let book = books[indexPath.row]
         let cell = tableView.dequeueReusableCell(indexPath: indexPath) as BookCell
         
-        cell.titleLbl.text = book.title
-        cell.authorsLbl.text = book.authors.first
-        
-//        if let imageLink = article.imageLink {
-//            cell.itemImage.kf.indicatorType = .activity
-//            cell.itemImage.kf.setImage(with: URL(string: imageLink))
-//            cell.hideImage(false)
-//        } else {
-//            cell.hideImage(true)
-//        }
+        cell.configureCell(book: book, delegate: self)
         return cell
     }
     
+}
+
+
+extension SearchBooksVC : BookCellDelegate {
+    func manageFavorite(bookId: String) {
+        
+    }
+    
+    func showBookPreview(previewURL: URL) {
+        
+    }
 }
 
 extension SearchBooksVC : UITableViewDelegate {

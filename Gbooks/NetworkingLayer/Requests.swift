@@ -12,16 +12,16 @@ enum Requests: URLRequestConvertible {
         
         switch self {
         case .searchBook:
-            return NetworkingConstants.volumes
+            return Constants.Networking.volumes
             
         case .favoriteList:
-            return NetworkingConstants.favorites + NetworkingConstants.volumes
+            return Constants.Networking.favorites + Constants.Networking.volumes
             
         case .addBookToFavorite:
-            return NetworkingConstants.favorites + NetworkingConstants.addValume
+            return Constants.Networking.favorites + Constants.Networking.addValume
             
         case .removeBookFromFavorite:
-            return NetworkingConstants.favorites + NetworkingConstants.removeValume
+            return Constants.Networking.favorites + Constants.Networking.removeValume
         }
     }
     
@@ -31,9 +31,9 @@ enum Requests: URLRequestConvertible {
         
         switch self {
         case .searchBook(let bookName):
-            paramDict[NetworkingConstants.searchString] = bookName
+            paramDict[Constants.Networking.searchString] = bookName
         case .addBookToFavorite(let bookId), .removeBookFromFavorite(let bookId):
-            paramDict[NetworkingConstants.volumeId] = bookId
+            paramDict[Constants.Networking.volumeId] = bookId
             
         default:
             break
@@ -57,7 +57,7 @@ enum Requests: URLRequestConvertible {
         var headers : [String:String] = [:]
         
         if Authorization.shared.isTokenValid() {
-            headers[NetworkingConstants.authorization] = "Bearer " + Authorization.shared.token!
+            headers[Constants.Networking.authorization] = "Bearer " + Authorization.shared.token!
         }
         
         return headers
@@ -66,7 +66,7 @@ enum Requests: URLRequestConvertible {
     
     
     func asURLRequest() throws -> URLRequest {
-        let url = try NetworkingConstants.baseUrl.asURL()
+        let url = try Constants.Networking.baseUrl.asURL()
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
         
         urlRequest.httpMethod = method.rawValue

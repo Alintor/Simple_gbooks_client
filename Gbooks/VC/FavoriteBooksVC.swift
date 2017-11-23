@@ -5,11 +5,12 @@ class FavoriteBooksVC: BooksVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(updateData), name: Constants.Notifications.favoriteChanged, object: nil)
+        updateData()
 
-        loadData()
     }
 
-    func loadData() {
+    @objc func updateData() {
         NetworkService.getBooks(request: Requests.favoriteList) { (result) in
             switch result {
             case .success(let value):

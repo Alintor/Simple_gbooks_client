@@ -57,6 +57,7 @@ struct NetworkService {
             if let error = response.error {
                 completion(Result.failure(error.localizedDescription))
             } else {
+                NotificationCenter.default.post(name: Constants.Notifications.favoriteChanged, object: nil)
                 completion(Result.success("Success"))
             }
         }
@@ -64,7 +65,7 @@ struct NetworkService {
     
     private static func parseBooks(json: JSON) -> [Book]{
         
-        guard let  json = json[NetworkingConstants.items].array else{
+        guard let  json = json[Constants.Networking.items].array else{
             return []
         }
         

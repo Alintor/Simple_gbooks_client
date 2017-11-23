@@ -18,6 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SS6-bM-R6k" customClass="EmptyView" customModule="Gbooks" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <searchBar contentMode="redraw" placeholder="Search" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHh-HE-abI">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                 <color key="tintColor" red="0.63921568630000003" green="0.6588235294" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -42,7 +46,11 @@
                             <constraint firstItem="LHh-HE-abI" firstAttribute="trailing" secondItem="C92-Dk-Cte" secondAttribute="trailing" id="8lz-y7-pPF"/>
                             <constraint firstItem="YsM-9H-D9b" firstAttribute="bottom" secondItem="C92-Dk-Cte" secondAttribute="bottom" id="Dmg-en-t25"/>
                             <constraint firstItem="LHh-HE-abI" firstAttribute="leading" secondItem="C92-Dk-Cte" secondAttribute="leading" id="I0B-Hk-4ae"/>
+                            <constraint firstItem="SS6-bM-R6k" firstAttribute="leading" secondItem="C92-Dk-Cte" secondAttribute="leading" id="L7x-IS-jak"/>
+                            <constraint firstItem="C92-Dk-Cte" firstAttribute="trailing" secondItem="SS6-bM-R6k" secondAttribute="trailing" id="Tba-p1-sjd"/>
                             <constraint firstItem="YsM-9H-D9b" firstAttribute="leading" secondItem="C92-Dk-Cte" secondAttribute="leading" id="cRq-1r-8uB"/>
+                            <constraint firstItem="SS6-bM-R6k" firstAttribute="top" secondItem="C92-Dk-Cte" secondAttribute="top" id="iFz-UZ-lOK"/>
+                            <constraint firstItem="C92-Dk-Cte" firstAttribute="bottom" secondItem="SS6-bM-R6k" secondAttribute="bottom" id="jJz-Lz-owj"/>
                             <constraint firstItem="YsM-9H-D9b" firstAttribute="trailing" secondItem="C92-Dk-Cte" secondAttribute="trailing" id="oZg-Vm-XY2"/>
                             <constraint firstItem="LHh-HE-abI" firstAttribute="top" secondItem="C92-Dk-Cte" secondAttribute="top" id="oww-HA-Nlr"/>
                             <constraint firstItem="YsM-9H-D9b" firstAttribute="top" secondItem="LHh-HE-abI" secondAttribute="bottom" id="xqK-uW-Sq6"/>
@@ -74,6 +82,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="emptyView" destination="SS6-bM-R6k" id="D68-Bi-nnk"/>
                         <outlet property="searchBar" destination="LHh-HE-abI" id="b83-ow-G7i"/>
                         <outlet property="tableVew" destination="YsM-9H-D9b" id="vgT-vD-hED"/>
                         <segue destination="B9J-Qi-ceT" kind="show" identifier="FavoriteBooksVC" id="VEg-Sg-J6H"/>
@@ -93,6 +102,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3eQ-zm-F91" customClass="EmptyView" customModule="Gbooks" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="135" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="boL-Mi-kuv">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.8666666666666667" green="0.87058823529411766" blue="0.8901960784313725" alpha="1" colorSpace="calibratedRGB"/>
@@ -107,8 +120,12 @@
                         <constraints>
                             <constraint firstItem="boL-Mi-kuv" firstAttribute="top" secondItem="MAi-dh-6kk" secondAttribute="top" id="3fl-3e-jF0"/>
                             <constraint firstItem="boL-Mi-kuv" firstAttribute="trailing" secondItem="MAi-dh-6kk" secondAttribute="trailing" id="IFB-ap-mL1"/>
+                            <constraint firstItem="MAi-dh-6kk" firstAttribute="trailing" secondItem="3eQ-zm-F91" secondAttribute="trailing" id="LiI-N7-yGd"/>
+                            <constraint firstItem="MAi-dh-6kk" firstAttribute="bottom" secondItem="3eQ-zm-F91" secondAttribute="bottom" id="MdP-OB-Emk"/>
+                            <constraint firstItem="3eQ-zm-F91" firstAttribute="top" secondItem="MAi-dh-6kk" secondAttribute="top" id="Wh0-Zu-yj1"/>
                             <constraint firstItem="boL-Mi-kuv" firstAttribute="leading" secondItem="MAi-dh-6kk" secondAttribute="leading" id="aD7-5g-q1Z"/>
                             <constraint firstItem="boL-Mi-kuv" firstAttribute="bottom" secondItem="MAi-dh-6kk" secondAttribute="bottom" id="dCE-Xh-sdw"/>
+                            <constraint firstItem="3eQ-zm-F91" firstAttribute="leading" secondItem="MAi-dh-6kk" secondAttribute="leading" id="yb4-1S-ORq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MAi-dh-6kk"/>
                     </view>
@@ -120,6 +137,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="emptyView" destination="3eQ-zm-F91" id="7aZ-5N-gtO"/>
                         <outlet property="tableVew" destination="boL-Mi-kuv" id="nTb-4l-Pb0"/>
                         <segue destination="gBY-Ew-MFD" kind="presentation" identifier="WebVC" id="m5t-0x-njF"/>
                         <segue destination="sUG-fj-ZA2" kind="show" identifier="BookDetailVC" id="Fzc-KA-IFU"/>
@@ -376,7 +394,7 @@
         <image name="logo" width="160" height="37"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GOu-Fe-e9W"/>
-        <segue reference="qUX-6p-Fc6"/>
+        <segue reference="m5t-0x-njF"/>
+        <segue reference="Fzc-KA-IFU"/>
     </inferredMetricsTieBreakers>
 </document>

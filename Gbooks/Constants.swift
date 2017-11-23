@@ -1,4 +1,6 @@
 import Foundation
+import UIKit
+
 struct Constants {
     struct Networking {
         static let baseUrl = "https://www.googleapis.com/books/v1"
@@ -29,5 +31,10 @@ struct Constants {
     
     struct Notifications {
         static let favoriteChanged = NSNotification.Name(rawValue: "favoriteChanged")
+    }
+    
+    struct Colors {
+        static let themeColor = UIColor(red: 126.0/255.0, green: 54.0/255.0, blue: 26.0/255.0, alpha: 1)
+        static let highlightColor = UIColor(red: 103.0/255.0, green: 106.0/255.0, blue: 111.0/255.0, alpha: 1)
     }
 }

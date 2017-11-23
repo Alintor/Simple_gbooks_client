@@ -5,12 +5,21 @@ import UIKit
 class BooksVC: UIViewController {
     
     @IBOutlet weak var tableVew: UITableView!
+    @IBOutlet weak var emptyView: EmptyView!
     var books = [Book]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableVew.registerReusableCell(BookCell.self)
+    }
+    
+    func refreshEmptyView() {
+        if books.count == 0 {
+            tableVew.isHidden = true
+        } else {
+            tableVew.isHidden = false
+        }
     }
     
     
@@ -42,6 +51,7 @@ extension BooksVC : UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return books.count
         
     }

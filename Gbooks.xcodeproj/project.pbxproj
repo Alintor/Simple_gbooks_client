@@ -25,6 +25,8 @@
 		A877090D1FC5AC9D0066A0E3 /* BookDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A877090C1FC5AC9D0066A0E3 /* BookDetailVC.swift */; };
 		A877090F1FC67A9B0066A0E3 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A877090E1FC67A9B0066A0E3 /* AlertManager.swift */; };
 		A87709111FC68CCD0066A0E3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87709101FC68CCD0066A0E3 /* Constants.swift */; };
+		A87709131FC693740066A0E3 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87709121FC693740066A0E3 /* EmptyView.swift */; };
+		A87709151FC693830066A0E3 /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A87709141FC693830066A0E3 /* EmptyView.xib */; };
 		A889A4701FC4258100BC1D97 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = A889A46F1FC4258100BC1D97 /* Authorization.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,8 @@
 		A877090C1FC5AC9D0066A0E3 /* BookDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailVC.swift; sourceTree = "<group>"; };
 		A877090E1FC67A9B0066A0E3 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		A87709101FC68CCD0066A0E3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A87709121FC693740066A0E3 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		A87709141FC693830066A0E3 /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
 		A889A46F1FC4258100BC1D97 /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
 		FF33B2C9D2D15250EF2A18EE /* Pods-Gbooks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gbooks.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gbooks/Pods-Gbooks.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,6 +151,8 @@
 			children = (
 				A86E90601FC5559A007B3AC0 /* BookCell.swift */,
 				A86E90611FC5559A007B3AC0 /* BookCell.xib */,
+				A87709121FC693740066A0E3 /* EmptyView.swift */,
+				A87709141FC693830066A0E3 /* EmptyView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -225,6 +231,7 @@
 				A8674C9E1FC402B800088546 /* LaunchScreen.storyboard in Resources */,
 				A8674C9B1FC402B800088546 /* Assets.xcassets in Resources */,
 				A8674C991FC402B800088546 /* Main.storyboard in Resources */,
+				A87709151FC693830066A0E3 /* EmptyView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A86E906B1FC562AE007B3AC0 /* UITableView+Extensions.swift in Sources */,
+				A87709131FC693740066A0E3 /* EmptyView.swift in Sources */,
 				A889A4701FC4258100BC1D97 /* Authorization.swift in Sources */,
 				A87709071FC5851E0066A0E3 /* BooksVC.swift in Sources */,
 				A86E905D1FC53395007B3AC0 /* Book.swift in Sources */,

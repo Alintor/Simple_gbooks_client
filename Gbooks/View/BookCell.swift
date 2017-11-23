@@ -21,7 +21,7 @@ class BookCell: UITableViewCell, Reusable {
     var isFavorite = false
     
     override func awakeFromNib() {
-        favoriteBtn.tintColor = UIColor(red: 126.0/255.0, green: 54.0/255.0, blue: 26.0/255.0, alpha: 1)
+        favoriteBtn.tintColor = Constants.Colors.themeColor
     }
     
     func refreshFavoriteButtonIcon() {

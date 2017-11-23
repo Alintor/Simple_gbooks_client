@@ -10,6 +10,8 @@ class SearchBooksVC: BooksVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        emptyView.configure(title: "Enter the title of the book in the search field", image: UIImage(named: "search_book")!)
+        refreshEmptyView()
         
     }
 
@@ -19,6 +21,7 @@ class SearchBooksVC: BooksVC {
             case .success(let value):
                 self.books = value
                 self.tableVew.reloadData()
+                self.refreshEmptyView()
             case .failure(let errorText):
                 AlertManager.showErrorMessage(errorText, sender: self)
             }
@@ -47,6 +50,7 @@ extension SearchBooksVC: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         searchBar.text = ""
+        books = [Book]()
         
     }
     

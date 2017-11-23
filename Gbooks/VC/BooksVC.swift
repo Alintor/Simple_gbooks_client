@@ -10,7 +10,6 @@ class BooksVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         tableVew.registerReusableCell(BookCell.self)
     }
     
@@ -22,10 +21,7 @@ class BooksVC: UIViewController {
         }
     }
     
-    
      // MARK: - Navigation
-     
-
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == String(describing: WebVC.self) {
             if let navVC = segue.destination as? UINavigationController,
@@ -34,7 +30,6 @@ class BooksVC: UIViewController {
                 webVC.link = link
             }
         }
-        
         if segue.identifier == String(describing: BookDetailVC.self) {
             if let bookDetailVC = segue.destination as? BookDetailVC,
                 let book = sender as? Book {
@@ -46,34 +41,28 @@ class BooksVC: UIViewController {
 }
 
 //MARK: - UITableViewDataSource implementation
-
 extension BooksVC : UITableViewDataSource {
-    
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return books.count
-        
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let book = books[indexPath.row]
         let cell = tableView.dequeueReusableCell(indexPath: indexPath) as BookCell
-        
         cell.configureCell(book: book, delegate: self)
         return cell
     }
     
 }
-
+//MARK: - UITableViewDelegate implementation
 extension BooksVC : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let book = books[indexPath.row]
         self.performSegue(withIdentifier: String(describing: BookDetailVC.self), sender: book)
     }
 }
-
+//MARK: - BookCellDelegate implementation
 extension BooksVC : BookCellDelegate {
     func isFavoriteBook(bookId: String, callback: @escaping (Bool) -> ()) {
         NetworkService.isBookFavorite(bookId: bookId) { (isFavorite) in

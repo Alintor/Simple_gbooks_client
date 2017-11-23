@@ -1,10 +1,4 @@
-//
-//  Book.swift
-//  Gbooks
-//
-//  Created by Alexandr Ovchinnikov on 22.11.17.
-//  Copyright © 2017 Alexandr Ovchinnikov. All rights reserved.
-//
+
 
 import UIKit
 import SwiftyJSON

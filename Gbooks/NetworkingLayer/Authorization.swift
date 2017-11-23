@@ -33,7 +33,6 @@ class Authorization: NSObject {
         get {
             return UserDefaults.standard.object(forKey: Constants.Authorization.tokenExpiresDate) as! Date
         }
-        
     }
     
     override init() {
@@ -42,8 +41,6 @@ class Authorization: NSObject {
                                  authorizeUrl: Constants.Authorization.authorizeUrl,
                                  accessTokenUrl: Constants.Authorization.accessTokenUrl,
                                  responseType: Constants.Authorization.responseType)
-        
-        
     }
     
     func isTokenValid() -> Bool {
@@ -96,13 +93,10 @@ class Authorization: NSObject {
                                                 DispatchQueue.main.async {
                                                     action()
                                                 }
-                                                
                     }) { (error) in
                         print(error.localizedDescription)
                     }
                 })
-                
-                
             }
         }
     }

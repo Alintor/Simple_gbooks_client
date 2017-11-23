@@ -1,4 +1,4 @@
-
+//MARK: - Response data
 enum Result<T> {
     case success(T)
     case failure(String)
@@ -9,7 +9,15 @@ import SwiftyJSON
 
 struct NetworkService {
     
+    //MARK: - Support methods
+    private static func parseBooks(json: JSON) -> [Book]{
+        guard let  json = json[Constants.Networking.items].array else{
+            return []
+        }
+        return json.flatMap(Book.init)
+    }
     
+    //MARK: - Public methods
     static func isBookFavorite(bookId:String, completion: @escaping (Bool)->Void) {
         Authorization.shared.checkTokenValidation { (isValid) in
             guard isValid else {
@@ -37,7 +45,6 @@ struct NetworkService {
         Alamofire.request(request).responseJSON(completionHandler: { response in
             
             switch(response.result){
-                
             case let .success(value):
                 
                 let books: [Book] = parseBooks(json: JSON(value))
@@ -46,7 +53,6 @@ struct NetworkService {
                 
             case let .failure(error):
                 completion(Result.failure(error.localizedDescription))
-                
             }
         })
     }
@@ -63,13 +69,5 @@ struct NetworkService {
         }
     }
     
-    private static func parseBooks(json: JSON) -> [Book]{
-        
-        guard let  json = json[Constants.Networking.items].array else{
-            return []
-        }
-        
-        return json.flatMap(Book.init)
-    }
     
 }

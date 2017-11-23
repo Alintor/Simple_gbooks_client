@@ -6,13 +6,10 @@ class SearchBooksVC: BooksVC {
     
     @IBOutlet weak var searchBar: UISearchBar!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         emptyView.configure(title: "Enter the title of the book in the search field", image: UIImage(named: "search_book")!)
         refreshEmptyView()
-        
     }
 
     func searchBooksWith(searchText:String) {
@@ -29,17 +26,13 @@ class SearchBooksVC: BooksVC {
     }
     
     @IBAction func favoritesBtnAction(_ sender: Any) {
-        
-        
         Authorization.shared.authorizedAccess(sender: self) {
             self.performSegue(withIdentifier: String(describing: FavoriteBooksVC.self), sender: nil)
         }
     }
-    
-    
-    
 }
 
+//MARK: - UISearchBarDelegate implementation
 extension SearchBooksVC: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -51,7 +44,6 @@ extension SearchBooksVC: UISearchBarDelegate {
         searchBar.resignFirstResponder()
         searchBar.text = ""
         books = [Book]()
-        
     }
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {

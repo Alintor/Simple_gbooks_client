@@ -5,10 +5,7 @@ import UIKit
 class WebVC: UIViewController {
 
     @IBOutlet weak var webView: UIWebView!
-    
-    
     var link:URL!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,5 +17,4 @@ class WebVC: UIViewController {
     @IBAction func closeBtnAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-
 }

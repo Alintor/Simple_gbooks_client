@@ -39,7 +39,6 @@ class BookDetailVC: UIViewController {
     }
 
     @IBAction func favoriteBtnAction(_ sender: Any) {
-        
         Authorization.shared.authorizedAccess(sender: self) {
             let request:Requests
             if self.isFavorite {

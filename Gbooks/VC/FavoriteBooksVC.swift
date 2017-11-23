@@ -28,6 +28,4 @@ class FavoriteBooksVC: BooksVC {
         Authorization.shared.logout()
         self.navigationController?.popViewController(animated: true)
     }
-    
-
 }

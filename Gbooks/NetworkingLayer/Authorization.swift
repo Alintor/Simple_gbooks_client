@@ -65,6 +65,10 @@ class Authorization: NSObject {
         }
     }
     
+    func logout() {
+        self.token = nil
+    }
+    
     func checkTokenValidation(callback: @escaping (Bool)->()) {
         guard isTokenValid() else {
             callback(false)
@@ -91,21 +95,25 @@ class Authorization: NSObject {
             if isValid {
                 action()
             } else {
-                self.oauthswift.authorizeURLHandler = SafariURLHandler(viewController: viewController, oauthSwift: self.oauthswift)
-                self.oauthswift.authorize(withCallbackURL: Authorization.callbackURL,
-                                     scope: Authorization.scope,
-                                     state: Authorization.state,
-                                     success: { (credentical, response, params) in
-                                        self.token = credentical.oauthToken
-                                        self.refreshToken = credentical.oauthRefreshToken
-                                        self.tokenExpiresDate = credentical.oauthTokenExpiresAt!
-                                        DispatchQueue.main.async {
-                                            action()
-                                        }
-                                        
-                }) { (error) in
-                    print(error.localizedDescription)
-                }
+                AlertManager.showAuthorizationAlert(sender: viewController, action: {
+                    self.oauthswift.authorizeURLHandler = SafariURLHandler(viewController: viewController, oauthSwift: self.oauthswift)
+                    self.oauthswift.authorize(withCallbackURL: Authorization.callbackURL,
+                                              scope: Authorization.scope,
+                                              state: Authorization.state,
+                                              success: { (credentical, response, params) in
+                                                self.token = credentical.oauthToken
+                                                self.refreshToken = credentical.oauthRefreshToken
+                                                self.tokenExpiresDate = credentical.oauthTokenExpiresAt!
+                                                DispatchQueue.main.async {
+                                                    action()
+                                                }
+                                                
+                    }) { (error) in
+                        print(error.localizedDescription)
+                    }
+                })
+                
+                
             }
         }
     }

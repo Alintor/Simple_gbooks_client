@@ -112,7 +112,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MAi-dh-6kk"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Favorite" id="1YO-5U-ja7"/>
+                    <navigationItem key="navigationItem" title="Favorite" id="1YO-5U-ja7">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="89k-2q-1Y9">
+                            <connections>
+                                <action selector="logoutAction:" destination="B9J-Qi-ceT" id="AgZ-3I-D43"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableVew" destination="boL-Mi-kuv" id="nTb-4l-Pb0"/>
                         <segue destination="gBY-Ew-MFD" kind="presentation" identifier="WebVC" id="m5t-0x-njF"/>

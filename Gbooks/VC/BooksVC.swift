@@ -1,10 +1,4 @@
-//
-//  BooksVC.swift
-//  Gbooks
-//
-//  Created by Alexandr Ovchinnikov on 22.11.17.
-//  Copyright © 2017 Alexandr Ovchinnikov. All rights reserved.
-//
+
 
 import UIKit
 
@@ -77,19 +71,22 @@ extension BooksVC : BookCellDelegate {
         }
     }
     
-    func addToFavorite(bookId: String) {
-        NetworkService.manageFavoriteBook(request: Requests.addBookToFavorite(bookId: bookId)) { (result) in
-            if case let .failure(error) = result {
-                print(error)
+    func manageFavoriteBook(bookId: String, isFavorite: Bool, callback: @escaping () -> ()) {
+
+        Authorization.shared.authorizedAccess(sender: self) {
+            let request:Requests
+            if isFavorite {
+                request = Requests.removeBookFromFavorite(bookId: bookId)
+            } else {
+                request = Requests.addBookToFavorite(bookId: bookId)
             }
-        }
-    }
-    
-    func removeFromFavorite(bookId: String) {
-        NetworkService.manageFavoriteBook(request: Requests.removeBookFromFavorite(bookId: bookId)) { (result) in
-            if case let .failure(error) = result {
-                print(error)
-            }
+            NetworkService.manageFavoriteBook(request: request, completion: { (result) in
+                if case let .failure(error) = result {
+                    AlertManager.showErrorMessage(error, sender: self)
+                } else {
+                    callback()
+                }
+            })
         }
     }
     

@@ -10,7 +10,6 @@ class SearchBooksVC: BooksVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //UserDefaults.standard.set(nil, forKey: Authorization.oauthToken)
         
     }
 
@@ -21,12 +20,13 @@ class SearchBooksVC: BooksVC {
                 self.books = value
                 self.tableVew.reloadData()
             case .failure(let errorText):
-                break
+                AlertManager.showErrorMessage(errorText, sender: self)
             }
         }
     }
     
     @IBAction func favoritesBtnAction(_ sender: Any) {
+        
         
         Authorization.shared.authorizedAccess(sender: self) {
             self.performSegue(withIdentifier: String(describing: FavoriteBooksVC.self), sender: nil)

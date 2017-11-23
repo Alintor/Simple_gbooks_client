@@ -39,19 +39,22 @@ class BookDetailVC: UIViewController {
     }
 
     @IBAction func favoriteBtnAction(_ sender: Any) {
-        let request:Requests
-        if isFavorite {
-            request = Requests.removeBookFromFavorite(bookId: book.id)
-        } else {
-            request = Requests.addBookToFavorite(bookId: book.id)
-        }
-        NetworkService.manageFavoriteBook(request: request, completion: { (result) in
-            if case let .failure(error) = result {
-                print(error)
+        
+        Authorization.shared.authorizedAccess(sender: self) {
+            let request:Requests
+            if self.isFavorite {
+                request = Requests.removeBookFromFavorite(bookId: self.book.id)
+            } else {
+                request = Requests.addBookToFavorite(bookId: self.book.id)
             }
-        })
-        isFavorite = !isFavorite
-        refreshFavoriteButtonIcon()
+            NetworkService.manageFavoriteBook(request: request, completion: { (result) in
+                if case let .failure(error) = result {
+                    AlertManager.showErrorMessage(error, sender: self)
+                }
+            })
+            self.isFavorite = !self.isFavorite
+            self.refreshFavoriteButtonIcon()
+        }
     }
     
     @IBAction func previewAction(_ sender: Any) {

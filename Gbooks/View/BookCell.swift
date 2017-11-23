@@ -3,10 +3,9 @@ import UIKit
 import Kingfisher
 
 protocol BookCellDelegate {
-    func addToFavorite(bookId: String)
-    func removeFromFavorite(bookId: String)
     func showBookPreview(previewURL: URL)
     func isFavoriteBook(bookId:String, callback:@escaping (Bool)->())
+    func manageFavoriteBook(bookId:String, isFavorite:Bool, callback:@escaping ()->())
 }
 
 class BookCell: UITableViewCell, Reusable {
@@ -35,13 +34,11 @@ class BookCell: UITableViewCell, Reusable {
     
     
     @IBAction func favoriteAction(_ sender: Any) {
-        if isFavorite {
-            delegate.removeFromFavorite(bookId: bookId)
-        } else {
-            delegate.addToFavorite(bookId: bookId)
+        
+        delegate.manageFavoriteBook(bookId: bookId, isFavorite: isFavorite) {
+            self.isFavorite = !self.isFavorite
+            self.refreshFavoriteButtonIcon()
         }
-        isFavorite = !isFavorite
-        refreshFavoriteButtonIcon()
     }
     
     @IBAction func previewAction(_ sender: Any) {
